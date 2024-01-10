@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Update Registry
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Update Registry
+    form(action="/update-cobj", method="post")
+      label(for="pet_name") Pet Name:
+      input(type="text", name="pet_name", required)
+      label(for="breed") Pet Breed:
+      input(type="text", name="breed", required)
+      label(for="raca") Pet Bio:
+      input(type="bio", name="bio", required)
+      button(type="submit") Submit
+
+    table
+      thead
+        tr
+          th Name
+          th Breed
+          th Bio
+      tbody
+        each contact in data
+          tr
+            td #{contact.pet_name}
+            td #{contact.breed}
+            td #{contact.bio}
+    a(href="/") Return to Home
